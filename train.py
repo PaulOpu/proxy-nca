@@ -52,7 +52,7 @@ parser.add_argument('--log-filename', default = 'example',
 parser.add_argument('--gpu-id', default = 8, type = int,
     help = 'ID of GPU that is used for training.'
 )
-parser.add_argument('--workers', default = 4, type = int,
+parser.add_argument('--workers', default = 2, type = int,
     dest = 'nb_workers',
     help = 'Number of workers for dataloader.'
 )

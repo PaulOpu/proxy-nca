@@ -2,6 +2,13 @@
     "name": "str('example')",
     "gpu_id": "int(0)",
     "dataset": {
+        "food": {
+            "classes": {
+                "train": "range(0, 10)",
+                "eval": "range(10, 20)"
+            },
+            "root": "str('/Gaze_UPMC_Food20')"
+        },
         "cub": {
             "classes": {
                 "train": "range(0, 100)",
@@ -34,8 +41,8 @@
         "type": "proxynca.ProxyNCA",
         "args": {
             "smoothing_const": "0.1",
-            "scaling_x": "1",
-            "scaling_p": "8"
+            "scaling_x": "3.0",
+            "scaling_p": "1.0"
         }
     },
     "lr_scheduler": {
