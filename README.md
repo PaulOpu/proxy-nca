@@ -1,4 +1,32 @@
 
+# Coding Challenge 
+
+Few-shot metric learning, a technique that is deeply integrated into our detection pipeline.
+
+a) Train and evaluate an embedding network using proxies by Movshovitz-Attias et al. 2017
+
+- Dataset: UMPC-G20 (http://visiir.lip6.fr)
+- Pytorch implementation including evaluation: https://github.com/dichotomies/proxy-nca
+
+b) Summarize your learnings
+
+c) Briefly lay out a how unlabelled data can be incorporated into proxy learning as was pioneered by Ren et al. for episodic meta learning (https://arxiv.org/abs/1803.00676)
+
+## Train and Evaluate
+
+I used the UMPC-G20 dataset with 20 classes of different food types. Thereby, the 
+
+- proxy are there to minimize comparison overload between data points
+- in this case: training 10 classes, eval 10 different classes (food.py)
+- proxies as much as classes
+- evaluation with recall and assignment of food clusters based on nearest neighbors 
+
+### Result
+
+With this training constellation the recall value was almost always at 100%. I debugged the model and made sure that the image files and the labels are imported correctly. From there on it should work as expected, as I haven't changed anything. Based on the small dataset, it might 
+
+
+
 # About
 
 This repository contains a PyTorch implementation of [*No Fuss Distance Metric Learning using Proxies*](https://arxiv.org/pdf/1703.07464.pdf) as introduced by Google Research.

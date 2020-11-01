@@ -27,7 +27,7 @@ parser = argparse.ArgumentParser(description='Training inception V2' +
 )
 # export directory, training and val datasets, test datasets
 parser.add_argument('--dataset', 
-    default='cub',
+    default='food',
     help = 'Dataset used for training and evaluation.'
 )
 parser.add_argument('--config', 
@@ -52,7 +52,7 @@ parser.add_argument('--log-filename', default = 'example',
 parser.add_argument('--gpu-id', default = 8, type = int,
     help = 'ID of GPU that is used for training.'
 )
-parser.add_argument('--workers', default = 2, type = int,
+parser.add_argument('--workers', default = 0, type = int,
     dest = 'nb_workers',
     help = 'Number of workers for dataloader.'
 )
@@ -77,9 +77,9 @@ torch.cuda.set_device(args.gpu_id)
 config = utils.load_config(args.config)
 
 # adjust config parameters according to args
-config['criterion']['args']['scaling_x'] = args.scaling_x
-config['criterion']['args']['scaling_p'] = args.scaling_p
-config['opt']['args']['proxynca']['lr'] = args.lr_proxynca
+#config['criterion']['args']['scaling_x'] = args.scaling_x
+#config['criterion']['args']['scaling_p'] = args.scaling_p
+#config['opt']['args']['proxynca']['lr'] = args.lr_proxynca
 
 print(json_dumps(obj = config, indent=4, cls = JSONEncoder, sort_keys = True))
 with open('log/' + args.log_filename + '.json', 'w') as x:
